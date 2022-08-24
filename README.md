@@ -1,7 +1,7 @@
 BUMPTONORMAL --- README
 ---
 # Introduction
-```text
+
 Artists use bump maps in 3ds to add surface detail to their models. This does not work well in some renderers.
 To use a bump map in a PBR renderer, it has to either be converted into a normal map before adding it as an asset, or use a custom shader to convert it in real-time.
 I was asked to facilitate in the first approach. I could not find the required functionality in 3ds, so I turned to 3rd party tools.
@@ -9,7 +9,6 @@ I found the source for GIMP's normal-map filter which achieved this result. This
 The immediate approach was to use OpenGL. I have experience with OpenGL API in C++, and it does not scale very well. Even switching between different updates of Windows 10 breaks GLUT, the underlying windowing system. And since I don't have experience with Windows Forms, I chose pygame.
 pygame currently breaks on Windows because of a recent update.
 I went a step higher and chose to implement it in the Godot engine.
-```
 ---
 # Architecture
 ## How does it work?
