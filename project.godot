@@ -1,0 +1,29 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[  ]
+_global_script_class_icons={
+}
+
+[application]
+
+config/name="Bump To Normal"
+run/main_scene="res://InputImage.tscn"
+
+[display]
+
+window/size/width=500
+window/size/height=500
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+
+[editor]
+
+main_run_args="bump3.jpg normal.jpg 10"

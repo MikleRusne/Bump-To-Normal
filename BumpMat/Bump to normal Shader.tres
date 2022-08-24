@@ -1,0 +1,22 @@
+[gd_resource type="Shader" format=2]
+
+[resource]
+code = "shader_type canvas_item;
+uniform float strength;
+uniform vec2 resolution;
+
+vec2 BumpToNormal(vec2 uv, sampler2D _texture)
+{
+    vec2 s = 1.0/resolution;
+    
+    float p = texture(_texture, uv).x;
+    float h1 = texture(_texture, uv + s * vec2(1.0,0)).x;
+    float v1 = texture(_texture, uv + s * vec2(0,1.0)).x;
+       
+   	return (p - vec2(h1, v1)) * strength + 0.5;
+}
+
+void fragment(){
+	COLOR = vec4(BumpToNormal(UV, TEXTURE),1.0,1.0);
+//  COLOR = vec4(UV,0,1);
+}"
